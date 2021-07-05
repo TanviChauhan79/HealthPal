@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HealthPal</string>
+    <string name="main_lable"><b>HealthPal</b></string>
+    <string name="spash_moto"><b>
+        "Know what you're eating"
+    </b></string>
 </resources>
