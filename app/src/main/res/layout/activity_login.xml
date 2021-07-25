@@ -8,7 +8,7 @@
     tools:context=".login"
     android:orientation="vertical"
     android:gravity="center"
-    >
+    android:background="@drawable/avocode">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
