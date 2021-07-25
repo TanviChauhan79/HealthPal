@@ -105,7 +105,7 @@
                 android:id="@+id/btn_register_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Register"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="172dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
