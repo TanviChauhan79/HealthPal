@@ -36,4 +36,5 @@ public class Splash extends AppCompatActivity {
         txt_moto=findViewById(R.id.txt_splash_moto);
         start=findViewById(R.id.btn_splash_start);
     }
+
 }
