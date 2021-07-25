@@ -67,6 +67,47 @@
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edt_register_repassword" />
+            <EditText
+                android:id="@+id/edt_register_lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edtback"
+                android:drawablePadding="10dp"
+                android:hint="last Name"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_register_firstName"
+                />
+            <EditText
+                android:id="@+id/edt_register_addres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edtback"
+                android:drawablePadding="10dp"
+                android:hint="adders"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_register_lastName" />
+            <EditText
+                android:id="@+id/edt_register_phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edtback"
+                android:drawablePadding="10dp"
+                android:hint="phoneNumber"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_register_addres" />
+            <Button
+                android:id="@+id/btn_register_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="172dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
