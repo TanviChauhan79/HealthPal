@@ -21,10 +21,23 @@
         android:id="@+id/scanQRFragment"
         android:name="com.tanvi.healthpal.ui.scanqr.ScanQRFragment"
         android:label="fragment_scan_q_r"
-        tools:layout="@layout/fragment_scan_q_r" />
+        tools:layout="@layout/fragment_scan_q_r" >
+        <action
+            android:id="@+id/action_scanQRFragment_to_nutritionsDetailFragment"
+            app:destination="@id/nutritionsDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/wishListFragment"
         android:name="com.tanvi.healthpal.ui.WishList.WishListFragment"
         android:label="fragment_wish_list"
-        tools:layout="@layout/fragment_wish_list" />
+        tools:layout="@layout/fragment_wish_list" >
+        <action
+            android:id="@+id/action_wishListFragment_to_nutritionsDetailFragment"
+            app:destination="@id/nutritionsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nutritionsDetailFragment"
+        android:name="com.tanvi.healthpal.ui.nutrions.NutritionsDetailFragment"
+        android:label="fragment_nutritions_detail"
+        tools:layout="@layout/fragment_nutritions_detail" />
 </navigation>
