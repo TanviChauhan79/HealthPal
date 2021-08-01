@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_homeFragment_to_scanQRFragment"
             app:destination="@id/scanQRFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_wishListFragment"
+            app:destination="@id/wishListFragment" />
     </fragment>
     <fragment
         android:id="@+id/scanQRFragment"
         android:name="com.tanvi.healthpal.ui.scanqr.ScanQRFragment"
         android:label="fragment_scan_q_r"
         tools:layout="@layout/fragment_scan_q_r" />
+    <fragment
+        android:id="@+id/wishListFragment"
+        android:name="com.tanvi.healthpal.WishListFragment"
+        android:label="fragment_wish_list"
+        tools:layout="@layout/fragment_wish_list" />
 </navigation>
