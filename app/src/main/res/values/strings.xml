@@ -4,6 +4,33 @@
     <string name="spash_moto"><b>
         "Know what you're eating"
     </b></string>
+
+    <string name="warn_permission_denied_camera">Turn on camera permission to scan QR code and get product details.</string>
+    <string name="settings">Settings</string>
+    <string name="tv_token_has_expired">Token has expired.</string>
+    <string name="tv_view_more">View More</string>
+    <string name="tv_view_details">View Details</string>
+    <string name="tv_view_less">View Less</string>
+    <string name="tv_carbs">Carbs</string>
+    <string name="tv_fat">Fat</string>
+    <string name="tv_protein">Protein</string>
+    <string name="tv_wishlist">Wishlist</string>
+    <string name="tv_scan_qr_code">Scan QR Code</string>
+    <string name="tv_sugars">Sugars</string>
+    <string name="tv_cholesterol">Cholesterol</string>
+    <string name="tv_dietary_fiber">Dietary Fiber</string>
+    <string name="tv_saturated_fat">Saturated Fat</string>
+    <string name="tv_trans_fat">Trans Fat</string>
+    <string name="tv_sodium">Sodium</string>
+    <string name="tv_vitamin_a">Vitamin A</string>
+    <string name="tv_vitamin_c">Vitamin C</string>
+    <string name="tv_salt">Salt</string>
+    <string name="tv_calcium">Calcium</string>
+    <string name="tv_iron">Iron</string>
+    <string name="tv_calories">Calories</string>
+    <string name="tv_no_data_available">No data available</string>
+    <string name="tv_compare">%1$s / 2 Compare</string>
+    <string name="tv_title_compare">Compare</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
