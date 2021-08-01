@@ -23,6 +23,8 @@ import com.tanvi.healthpal.R;
 import com.tanvi.healthpal.databinding.FragmentScanQRBinding;
 import com.tanvi.healthpal.ui.scanqr.apis.entity.QRScannerViewModel;
 
+import static android.webkit.ConsoleMessage.MessageLevel.LOG;
+
 public class ScanQRFragment extends Fragment {
     private FragmentScanQRBinding binding;
     private QRScannerViewModel viewModel;

@@ -29,12 +29,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.tvScan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_scanQRFragment);
-            }
-        });
-        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_wishListFragment);
+        View.OnClickListener scanner= Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_scanQRFragment);
+        View.OnClickListener wishlist=Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_wishListFragment);
+
+        binding.tvScan.setOnClickListener(scanner);
+        binding.tvWishList.setOnClickListener(wishlist);
     }
 }
