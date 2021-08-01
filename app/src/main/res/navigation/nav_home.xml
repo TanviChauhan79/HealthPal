@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/scanQRFragment"
-        android:name="com.tanvi.healthpal.ScanQRFragment"
+        android:name="com.tanvi.healthpal.ui.scanqr.ScanQRFragment"
         android:label="fragment_scan_q_r"
         tools:layout="@layout/fragment_scan_q_r" />
 </navigation>
