@@ -10,4 +10,9 @@
         android:name="com.tanvi.healthpal.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/scanQRFragment"
+        android:name="com.tanvi.healthpal.ScanQRFragment"
+        android:label="fragment_scan_q_r"
+        tools:layout="@layout/fragment_scan_q_r" />
 </navigation>
