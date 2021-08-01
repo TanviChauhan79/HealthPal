@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "746375132165",
+    "project_id": "healthpalapp-ff9ad",
+    "storage_bucket": "healthpalapp-ff9ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746375132165:android:2ac6054130c58fb955986c",
+        "android_client_info": {
+          "package_name": "com.projectfinal.healthpalll"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746375132165-pcmnje6ee4r68317gjq0ea5ngegnaf7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAebJhqaZzV1HuP9CTp4jQCs15x3ew4JU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746375132165-pcmnje6ee4r68317gjq0ea5ngegnaf7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746375132165:android:0a0b23aed45d0d9655986c",
+        "android_client_info": {
+          "package_name": "com.projectfinal.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746375132165-pcmnje6ee4r68317gjq0ea5ngegnaf7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAebJhqaZzV1HuP9CTp4jQCs15x3ew4JU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746375132165-pcmnje6ee4r68317gjq0ea5ngegnaf7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746375132165:android:01a06607a216979255986c",
+        "android_client_info": {
+          "package_name": "com.tanvi.healthpal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746375132165-pcmnje6ee4r68317gjq0ea5ngegnaf7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAebJhqaZzV1HuP9CTp4jQCs15x3ew4JU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746375132165-pcmnje6ee4r68317gjq0ea5ngegnaf7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
