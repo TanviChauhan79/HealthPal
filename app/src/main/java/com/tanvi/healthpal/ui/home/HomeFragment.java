@@ -30,7 +30,9 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         View.OnClickListener scanner= Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_scanQRFragment);
+        View.OnClickListener wishlist=Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_wishListFragment);
 
         binding.tvScan.setOnClickListener(scanner);
+        binding.tvWishList.setOnClickListener(wishlist);
     }
 }

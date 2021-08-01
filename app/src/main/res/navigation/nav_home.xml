@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_scan_q_r" />
     <fragment
         android:id="@+id/wishListFragment"
-        android:name="com.tanvi.healthpal.WishListFragment"
+        android:name="com.tanvi.healthpal.ui.WishList.WishListFragment"
         android:label="fragment_wish_list"
         tools:layout="@layout/fragment_wish_list" />
 </navigation>
