@@ -3,6 +3,8 @@ package com.tanvi.healthpal.ui.scanqr.apis.entity;
 import android.os.Bundle;
 import android.os.Parcelable;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.navigation.Navigation;
 
@@ -20,10 +22,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class QRScannerViewModel extends ViewModel {
     Retrofit retrofit;
     public final static String URL="https://world.openfoodfacts.org/api/v0/product/";
-    public final static String NUTRIMENTS_INFO="NUTRIMENTS_INFO";
-
-    public Bundle ApiCall(String code){
-        Bundle bundle=new Bundle();
+    public MutableLiveData<NutritionalInfoFromApi>nutritionalInfoFromApiMutableLiveData=new MutableLiveData<>();
+    public void ApiCall(String code){
         retrofit=new Retrofit.Builder()
                 .baseUrl(URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -36,15 +36,7 @@ public class QRScannerViewModel extends ViewModel {
             public void onResponse(Call<NutritionalInfoFromApi> call, Response<NutritionalInfoFromApi> response) {
 
                 NutritionalInfoFromApi nutritionalInfoFromApi=response.body();
-                if(nutritionalInfoFromApi.getProduct()!=null&&
-                nutritionalInfoFromApi.getProduct().getNutrients()!=null){
-                    nutritionalInfoFromApi.getProduct().getNutrients()
-                            .setProduct_iamge(nutritionalInfoFromApi.getProduct().getImage_front_url());
-                    nutritionalInfoFromApi.getProduct().getNutrients()
-                            .setProduct_name(nutritionalInfoFromApi.getProduct().getProduct_name());
-                    bundle.putParcelable(NUTRIMENTS_INFO, (Parcelable) nutritionalInfoFromApi.getProduct().getNutrients());
-                }
-
+                setNutritionalInfoFromApiMutableLiveData(nutritionalInfoFromApi);
             }
 
             @Override
@@ -52,9 +44,11 @@ public class QRScannerViewModel extends ViewModel {
 
             }
         });
-        return bundle;
-
     }
-
-
+    public MutableLiveData<NutritionalInfoFromApi> getNutritionalInfoFromApiMutableLiveData() {
+        return nutritionalInfoFromApiMutableLiveData;
+    }
+    public void setNutritionalInfoFromApiMutableLiveData(NutritionalInfoFromApi nutritionalInfoFromApi) {
+        nutritionalInfoFromApiMutableLiveData.postValue(nutritionalInfoFromApi);
+    }
 }

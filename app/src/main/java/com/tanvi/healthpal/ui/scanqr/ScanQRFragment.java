@@ -5,9 +5,11 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,14 +24,16 @@ import com.google.zxing.Result;
 import com.tanvi.healthpal.R;
 import com.tanvi.healthpal.databinding.FragmentScanQRBinding;
 import com.tanvi.healthpal.ui.scanqr.apis.entity.QRScannerViewModel;
+import com.tanvi.healthpal.ui.scanqr.apis.entity.elements.NutritionalInfoFromApi;
 
 import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 
 public class ScanQRFragment extends Fragment {
     private FragmentScanQRBinding binding;
     private QRScannerViewModel viewModel;
-
     private CodeScanner codeScanner;
+    public final static String NUTRIMENTS_INFO="NUTRIMENTS_INFO";
+    private Bundle bundle=new Bundle();
 
     private boolean isPermissionsGranted = false;
 
@@ -56,7 +60,7 @@ public class ScanQRFragment extends Fragment {
                     @Override
                     public void run() {
                         Bundle bundle=new Bundle();
-                        bundle= viewModel.ApiCall(result.toString());
+                        viewModel.ApiCall(result.getText());
                         Navigation.findNavController(getView())
                                 .navigate(R.id.action_scanQRFragment_to_nutritionsDetailFragment,bundle);
                         Toast.makeText(getContext(),"sdas"+result,Toast.LENGTH_LONG).show();
@@ -75,6 +79,21 @@ public class ScanQRFragment extends Fragment {
 
                     }
                 });
+            }
+        });
+
+        viewModel.nutritionalInfoFromApiMutableLiveData.observe(getViewLifecycleOwner(), new Observer<NutritionalInfoFromApi>() {
+            @Override
+            public void onChanged(NutritionalInfoFromApi nutritionalInfoFromApi) {
+                if(nutritionalInfoFromApi.getProduct()!=null
+                &&nutritionalInfoFromApi.getProduct().getNutrients()!=null){
+                    nutritionalInfoFromApi.getProduct().getNutrients()
+                            .setProduct_iamge(nutritionalInfoFromApi.getProduct().getImage_front_url());
+                    nutritionalInfoFromApi.getProduct().getNutrients()
+                            .setProduct_name(nutritionalInfoFromApi.getProduct().getProduct_name());
+                    bundle.putParcelable(NUTRIMENTS_INFO, (Parcelable) nutritionalInfoFromApi.getProduct().getNutrients());
+                }
+
             }
         });
 
