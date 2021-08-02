@@ -1,9 +1,13 @@
 package com.tanvi.healthpal.ui.scanqr;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -26,6 +30,9 @@ import com.tanvi.healthpal.databinding.FragmentScanQRBinding;
 import com.tanvi.healthpal.ui.scanqr.apis.entity.QRScannerViewModel;
 import com.tanvi.healthpal.ui.scanqr.apis.entity.elements.NutritionalInfoFromApi;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 
 public class ScanQRFragment extends Fragment {
@@ -33,9 +40,13 @@ public class ScanQRFragment extends Fragment {
     private QRScannerViewModel viewModel;
     private CodeScanner codeScanner;
     public final static String NUTRIMENTS_INFO="NUTRIMENTS_INFO";
+    int PERM_CODE= 11;
     private Bundle bundle=new Bundle();
 
     private boolean isPermissionsGranted = false;
+    String[] permissions={
+            Manifest.permission.CAMERA
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,34 +64,36 @@ public class ScanQRFragment extends Fragment {
 
         codeScannerPermissions();
 
-        codeScanner.setDecodeCallback(new DecodeCallback() {
-            @Override
-            public void onDecoded(@NonNull Result result) {
-                requireActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Bundle bundle=new Bundle();
-                        viewModel.ApiCall(result.getText());
-                        Navigation.findNavController(getView())
-                                .navigate(R.id.action_scanQRFragment_to_nutritionsDetailFragment,bundle);
-                        Toast.makeText(getContext(),"sdas"+result,Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-        });
+        if(checkPermissions()) {
+            codeScanner.setDecodeCallback(new DecodeCallback() {
+                @Override
+                public void onDecoded(@NonNull Result result) {
+                    requireActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Bundle bundle = new Bundle();
+                            viewModel.ApiCall(result.getText());
+                            Navigation.findNavController(getView())
+                                    .navigate(R.id.action_scanQRFragment_to_nutritionsDetailFragment, bundle);
+                            Toast.makeText(getContext(), "sdas" + result, Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            });
 
-        codeScanner.setErrorCallback(new ErrorCallback() {
-            @Override
-            public void onError(@NonNull Exception error) {
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getContext(),""+error.getMessage(),Toast.LENGTH_LONG).show();
+            codeScanner.setErrorCallback(new ErrorCallback() {
+                @Override
+                public void onError(@NonNull Exception error) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getContext(), "" + error.getMessage(), Toast.LENGTH_LONG).show();
 
-                    }
-                });
-            }
-        });
+                        }
+                    });
+                }
+            });
+        }
 
         viewModel.nutritionalInfoFromApiMutableLiveData.observe(getViewLifecycleOwner(), new Observer<NutritionalInfoFromApi>() {
             @Override
@@ -110,5 +123,19 @@ public class ScanQRFragment extends Fragment {
         codeScanner.setScanMode(ScanMode.SINGLE);
         codeScanner.setAutoFocusEnabled(true); // Whether to enable auto focus or not
         codeScanner.setFlashEnabled(false); // Whether to enable flash or not
+    }
+    private boolean checkPermissions(){
+        List<String> ListOfPremissions= new ArrayList<>();
+        for(String perm: permissions){
+            if(ContextCompat.checkSelfPermission(getContext(),perm) != PackageManager.PERMISSION_GRANTED){
+                ListOfPremissions.add(perm);
+            }
+        }
+        if(!ListOfPremissions.isEmpty()){
+            ActivityCompat.requestPermissions(requireActivity(),ListOfPremissions
+                    .toArray(new String[ListOfPremissions.size()]),PERM_CODE);
+            return false;
+        }
+        return true;
     }
 }

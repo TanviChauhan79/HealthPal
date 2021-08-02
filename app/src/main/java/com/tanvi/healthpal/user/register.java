@@ -1,4 +1,4 @@
-package com.tanvi.healthpal;
+package com.tanvi.healthpal.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.tanvi.healthpal.R;
+
 import java.util.HashMap;
 import java.util.Map;
 public class register extends AppCompatActivity {

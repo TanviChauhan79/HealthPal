@@ -1,4 +1,4 @@
-package com.tanvi.healthpal;
+package com.tanvi.healthpal.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.tanvi.healthpal.MainActivity;
+import com.tanvi.healthpal.R;
 
 public class login extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        intalise();
+        initialize();
 
         txt_sinup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +56,7 @@ public class login extends AppCompatActivity {
         });
 
     }
-    private void intalise(){
+    private void initialize(){
         edt_email=findViewById(R.id.edt_login_email);
         edt_password=findViewById(R.id.edt_login_password);
         txt_forgetpassword=findViewById(R.id.txt_login_forgotpassword);

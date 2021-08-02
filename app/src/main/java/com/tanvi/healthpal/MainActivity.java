@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.tanvi.healthpal.user.login;
 
 public class MainActivity extends AppCompatActivity {
     // widget
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 auth.signOut();
-                startActivity(new Intent(MainActivity.this,login.class));
+                startActivity(new Intent(MainActivity.this, login.class));
                 finish();
             }
         });

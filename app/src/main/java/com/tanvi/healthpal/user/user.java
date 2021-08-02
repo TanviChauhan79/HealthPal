@@ -1,4 +1,4 @@
-package com.tanvi.healthpal;
+package com.tanvi.healthpal.user;
 public class user {
     private String email;
     private String password;

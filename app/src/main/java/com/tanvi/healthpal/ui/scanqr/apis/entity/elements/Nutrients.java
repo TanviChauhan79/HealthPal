@@ -3,6 +3,7 @@ package com.tanvi.healthpal.ui.scanqr.apis.entity.elements;
 import com.google.gson.annotations.SerializedName;
 
 public class Nutrients {
+    private String id;
     private Double calcium;
     private Double calcium_100g;
     private Double calcium_serving;
@@ -111,6 +112,7 @@ public class Nutrients {
     private Double vitamin_c_value;
     private String product_name;
     private String product_iamge;
+    private Boolean isChecked;
 
 
     public Double getCalcium() {
@@ -815,5 +817,21 @@ public class Nutrients {
 
     public void setProduct_iamge(String product_iamge) {
         this.product_iamge = product_iamge;
+    }
+
+    public Boolean getChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(Boolean checked) {
+        isChecked = checked;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

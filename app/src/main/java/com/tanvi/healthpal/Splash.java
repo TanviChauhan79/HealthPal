@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.tanvi.healthpal.user.login;
+
 public class Splash extends AppCompatActivity {
 
     private ImageView img_logo;
@@ -22,7 +24,7 @@ public class Splash extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Splash.this,login.class);
+                Intent intent=new Intent(Splash.this, login.class);
                 startActivity(intent);
                 finish();
             }
