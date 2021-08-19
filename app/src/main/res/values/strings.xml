@@ -1,10 +1,5 @@
 <resources>
     <string name="app_name">HealthPal</string>
-    <string name="main_lable"><b>HealthPal</b></string>
-    <string name="spash_moto"><b>
-        "Know what you're eating"
-    </b></string>
-
     <string name="warn_permission_denied_camera">Turn on camera permission to scan QR code and get product details.</string>
     <string name="settings">Settings</string>
     <string name="tv_token_has_expired">Token has expired.</string>
@@ -31,6 +26,33 @@
     <string name="tv_no_data_available">No data available</string>
     <string name="tv_compare">%1$s / 2 Compare</string>
     <string name="tv_title_compare">Compare</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_enter_your_email_id">Email Id</string>
+    <string name="hint_password">Password</string>
+    <string name="tv_login">Login</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="tv_sign_up">Sign Up</string>
+    <string name="tv_don_t_have_an_account"><![CDATA[Don\'t have an account?]]></string>
+    <string name="tv_already_have_an_account"><![CDATA[Already have an account?]]></string>
+    <string name="error_empty_number">Please enter mobile number.</string>
+    <string name="error_invalid_number">Please enter valid mobile number.</string>
+    <string name="error_empty_field">Please enter %1$s.</string>
+    <string name="error_password_doesn_t_match">Password and Confirm password doesn\'t match.</string>
+    <string name="tv_result">Result</string>
+    <string name="hint_mobile_number">Mobile Number</string>
+    <string name="hint_address_optional">Address (Optional)</string>
+    <string name="hint_address">Address</string>
+    <string name="tv_verify_otp">Verify OTP</string>
+    <string name="tv_otp_sent_msg">Please type the verification code sent to your registered mobile number.</string>
+    <string name="tv_otp_resend_msg"><![CDATA[Didn\'t receive the code?: ]]> %1$s</string>
+    <string name="tv_cancel">Cancel</string>
+    <string name="tv_resend">Resend</string>
+    <string name="hint_country_code">Country Code</string>
+    <string name="tv_user_profile">User Profile</string>
+    <string name="tv_save">Save</string>
+    <string name="tv_change_password">Change Password</string>
+    <string name="tv_forgot_password">Forgot Password?</string>
+    <string name="tv_share_using">Share using</string>
+    <string name="tv_log_out">Log out</string>
+    <string name="tv_product_name">Product Name</string>
 </resources>

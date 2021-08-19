@@ -11,31 +11,31 @@
         android:layout_height="wrap_content"
         android:text="@string/tv_wishlist"
         android:textColor="@color/color_two"
-        android:textSize="20sp"
+        android:textSize="@dimen/_20ssp"
         android:fontFamily="@font/poppins_medium"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/ivFilter"-->
-    <!--        android:layout_width="@dimen/_30sdp"-->
-    <!--        android:layout_height="@dimen/_30sdp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="@+id/tvWishList"-->
-    <!--        app:layout_constraintBottom_toBottomOf="@+id/tvWishList"-->
-    <!--        android:src="@drawable/ic_filter"-->
-    <!--        android:padding="@dimen/_5sdp"-->
-    <!--        android:layout_marginEnd="@dimen/_10sdp"-->
-    <!--        />-->
+<!--    <ImageView-->
+<!--        android:id="@+id/ivFilter"-->
+<!--        android:layout_width="@dimen/_30sdp"-->
+<!--        android:layout_height="@dimen/_30sdp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/tvWishList"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tvWishList"-->
+<!--        android:src="@drawable/ic_filter"-->
+<!--        android:padding="@dimen/_5sdp"-->
+<!--        android:layout_marginEnd="@dimen/_10sdp"-->
+<!--        />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvWishList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_10sdp"
         app:layout_constraintTop_toBottomOf="@+id/tvWishList"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,9 +46,9 @@
         android:id="@+id/tvShowNoData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/poppins_medium"
-        android:textSize="15sp"
+        android:textSize="@dimen/_15ssp"
         android:visibility="gone"
         android:text="@string/tv_no_data_available"
         app:layout_constraintTop_toBottomOf="@+id/tvWishList"
@@ -64,19 +64,19 @@
         tools:text="Compare"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_medium"
-        android:textSize="11sp"
-        android:elevation="200dp"
+        android:textSize="@dimen/_11ssp"
+        android:elevation="@dimen/_200sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/bg_rounded"
         android:backgroundTint="@color/color_one"
         android:visibility="gone"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:layout_marginBottom="30dp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

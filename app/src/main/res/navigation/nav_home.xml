@@ -1,43 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_home"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/homeScreenFragment">
+
+<!--    android:name="com.technobugsai.healthpal.ui.qrscanner.QRScannerFragment"-->
+    <fragment
+        android:id="@+id/QRScannerFragment"
+        android:name="com.tanvi.healthpal.ui.scanqr.ScanQRFragment"
+        android:label="QRScannerFragment" >
+        <action
+            android:id="@+id/action_QRScannerFragment_to_nutritionDetailsFragment"
+            app:destination="@id/nutritionDetailsFragment" />
+    </fragment>
+
+<!--    android:name="com.technobugsai.healthpal.ui.nutritiondetails.NutritionDetailsFragment"-->
+    <fragment
+        android:id="@+id/nutritionDetailsFragment"
+        android:name="com.tanvi.healthpal.ui.nutritions.NutritionsDetailFragment"
+        android:label="NutritionDetailsFragment" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/homeFragment"-->
+<!--        android:name="com.technobugsai.healthpal.ui.home.HomeScreenFragment"-->
+<!--        android:label="HomeFragment" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_homeFragment_to_QRScannerFragment"-->
+<!--            app:destination="@id/QRScannerFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_homeFragment_to_wishListFragment"-->
+<!--            app:destination="@id/wishListFragment" />-->
+<!--    </fragment>-->
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.tanvi.healthpal.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_scanQRFragment"
-            app:destination="@id/scanQRFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_wishListFragment"
-            app:destination="@id/wishListFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/scanQRFragment"
-        android:name="com.tanvi.healthpal.ui.scanqr.ScanQRFragment"
-        android:label="fragment_scan_q_r"
-        tools:layout="@layout/fragment_scan_q_r" >
-        <action
-            android:id="@+id/action_scanQRFragment_to_nutritionsDetailFragment"
-            app:destination="@id/nutritionsDetailFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/wishListFragment"
-        android:name="com.tanvi.healthpal.ui.WishList.WishListFragment"
-        android:label="fragment_wish_list"
-        tools:layout="@layout/fragment_wish_list" >
+        android:name="com.tanvi.healthpal.ui.wishlist.WishListFragment"
+        android:label="WishListFragment" >
         <action
-            android:id="@+id/action_wishListFragment_to_nutritionsDetailFragment"
-            app:destination="@id/nutritionsDetailFragment" />
+            android:id="@+id/action_wishListFragment_to_nutritionDetailsFragment"
+            app:destination="@id/nutritionDetailsFragment" />
+        <action
+            android:id="@+id/action_wishListFragment_to_compareFragment"
+            app:destination="@id/compareFragment" />
     </fragment>
     <fragment
-        android:id="@+id/nutritionsDetailFragment"
-        android:name="com.tanvi.healthpal.ui.nutrions.NutritionsDetailFragment"
-        android:label="fragment_nutritions_detail"
-        tools:layout="@layout/fragment_nutritions_detail" />
+        android:id="@+id/compareFragment"
+        android:name="com.tanvi.healthpal.ui.compare.CompareFragment"
+        android:label="CompareFragment">
+
+        <action
+            android:id="@+id/action_compareFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.tanvi.healthpal.ui.home.HomeScreenFragment"
+        android:label="HomeScreenFragment" >
+
+        <action
+            android:id="@+id/action_homeScreenFragment_to_QRScannerFragment"
+            app:destination="@id/QRScannerFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_wishListFragment"
+            app:destination="@id/wishListFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_verifyOtpFragment"
+            app:destination="@id/verifyOtpFragment2" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.tanvi.healthpal.ui.changepassword.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.tanvi.healthpal.ui.profile.UserProfileFragment"
+        android:label="UserProfileFragment" />
+    <fragment
+        android:id="@+id/verifyOtpFragment2"
+        android:name="com.tanvi.healthpal.ui.authentication.VerifyOtpFragment"
+        android:label="VerifyOtpFragment" >
+        <action
+            android:id="@+id/action_verifyOtpFragment_to_changePasswordFragment2"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.tanvi.healthpal.ui.result.ResultFragment"
+        android:label="ResultFragment" />
+
 </navigation>
