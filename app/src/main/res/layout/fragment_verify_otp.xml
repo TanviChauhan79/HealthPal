@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvVerifyOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/tv_verify_otp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_15ssp"
+        android:layout_margin="@dimen/_10sdp"
+        android:textColor="@color/color_one"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tvEnterOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVerifyOtp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/tv_otp_sent_msg"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_12ssp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        android:textColor="@color/color_two"
+        android:textStyle="bold"
+        />
+
+    <com.mukesh.OtpView
+        android:id="@+id/otpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnterOtp"
+        android:textColor="@color/color_one"
+        app:OtpItemCount="6"
+        app:OtpLineColor="@color/color_three"
+        app:OtpViewType="line"
+        android:focusable="true"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:id="@+id/tvEnterOtpResend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otpView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/tv_otp_resend_msg"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_12ssp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        android:textColor="@color/color_two"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnterOtpResend"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded"
+            android:textColor="@color/white"
+            android:text="@string/tv_cancel"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:layout_margin="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvResend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded"
+            android:backgroundTint="@color/color_one"
+            android:textColor="@color/white"
+            android:text="@string/tv_resend"
+            android:visibility="gone"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_margin="@dimen/_10sdp"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
